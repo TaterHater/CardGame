@@ -6,8 +6,15 @@ public class Library : MonoBehaviour {
     private ArrayList cardList;
 	// Use this for initialization
 	void Start () {
-        cardList.Add(12);
+        //all cards are defined here. 
+        cardList.Add(new Card(1,"test","sprite",10,10,10f));
+        cardList.Add(new Card(2,"test2", "sprite", 10, 10, 10f));
 	}
+
+    Card getCard(int i)
+    {
+      return (Card)cardList[i];
+    }
 	
 	// Update is called once per frame
 	void Update () {
