@@ -4,12 +4,18 @@ using System.Collections;
 
 public class Library : MonoBehaviour {
     private ArrayList cardList;
+    public Sprite[] spriteList= new Sprite[3];
 	// Use this for initialization
 	void Start () {
         //all cards are defined here. 
-        cardList.Add(new Card(1,"test","sprite",10,10,10f));
-        cardList.Add(new Card(2,"test2", "sprite", 10, 10, 10f));
-	}
+        //library index, name, sprite index, hp, ap, FO%, movement
+      cardList.Add(new PlayerCard(1001,"pitcher",0,4,4,20,4));
+      cardList.Add(new PlayerCard(1002,"batter", 1, 3, 6, 30f,3));
+      cardList.Add(new PlayerCard(1003, "Quarterback", 2, 3,2, 20f, 2));
+      cardList.Add(new PlayerCard(1004, "Lacrosse Middie", 3, 4, 4, 60, 4));
+      cardList.Add(new PlayerCard(1005, "Lacrosse Goalie", 4, 10, 3, 10f, 3));
+      cardList.Add(new PlayerCard(1006, "Lacrosse Attack", 5, 3, 2, 20f, 2));
+    }
 
     Card getCard(int i)
     {
@@ -22,37 +28,4 @@ public class Library : MonoBehaviour {
 	}
 }
 
-public class Card 
-{
-    private int index;
-    private string name;
-    private string sprite;
-    private int hitpoints;
-    private int attackpoints;
-   private float faceoff;
-    public Card(int i, string n, string s, int hp, int ap, float fo)
-    {
-        index = i;
-        name = n;
-        sprite = s;
-        hitpoints = hp;
-        attackpoints = ap;
-        faceoff = fo;
-    }
- int getHp()
-    {
-        return hitpoints;
-    }
-    int getAp()
-    {
-        return attackpoints;
-    }
-    string getName()
-    {
-        return name;
-    }
-    float getFaceoff()
-    {
-        return faceoff;
-    }
-}
+
